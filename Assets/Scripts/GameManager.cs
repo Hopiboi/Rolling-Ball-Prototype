@@ -1,18 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public void TutorialLevel()
     {
-        
+        SceneManager.LoadScene("Tutorial");
+    }
+    public void Level1()
+    {
+        SceneManager.LoadScene("Level 1");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void QuitButton()
     {
-        
+        Application.Quit();
     }
 }
