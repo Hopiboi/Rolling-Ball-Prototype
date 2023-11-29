@@ -7,17 +7,31 @@ public class DrawingManager : MonoBehaviour
     [Header("Line Prefab")]
     public GameObject linesPrefab;
     Line activeLine;
-    private Camera cam;
 
+    [Header("Line Renderer")]
     [SerializeField] private LineRenderer lineRenderer;
-    
+
+    [Header("Third Party")]
+    private Camera cam;
+    private GameManager gameManager;
+
+
     void Start()
     {
         cam = Camera.main;
+        gameManager = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        if(gameManager.isCanDraw == true)
+        {
+            Drawing();
+        }
+    }
+
+    public void Drawing()
     {
         //When pressing down the left mouse button
         if (Input.GetMouseButtonDown(0))

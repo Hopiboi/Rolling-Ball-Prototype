@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
+    [SerializeField] public bool isCanDraw = false;
+
+    public void Start()
+    {
+        isCanDraw = false;
+    }
+
     public void TutorialLevel()
     {
         SceneManager.LoadScene("Tutorial");
