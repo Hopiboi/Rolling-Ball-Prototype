@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ball
   - Entrance
+  - OutOfBounds
   layers:
   - Default
   - TransparentFX

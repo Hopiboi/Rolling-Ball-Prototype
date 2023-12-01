@@ -13,6 +13,11 @@ public class GameManager : MonoBehaviour
         isCanDraw = false;
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void TutorialLevel()
     {
         SceneManager.LoadScene("Tutorial");

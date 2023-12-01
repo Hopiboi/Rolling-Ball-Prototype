@@ -11,6 +11,10 @@ public class DrawingManager : MonoBehaviour
     [Header("Line Renderer")]
     [SerializeField] private LineRenderer lineRenderer;
 
+    [Header("Drawing Count")]
+    [SerializeField] private int drawSlot = 3;
+    [SerializeField] private int zeroSlot = -1;
+
     [Header("Third Party")]
     private Camera cam;
     private GameManager gameManager;
@@ -27,7 +31,11 @@ public class DrawingManager : MonoBehaviour
     {
         if(gameManager.isCanDraw == true)
         {
-            Drawing();
+            if (drawSlot != zeroSlot)
+            {
+                Drawing();
+            }
+
         }
     }
 
@@ -39,6 +47,7 @@ public class DrawingManager : MonoBehaviour
             //The line will be created
             GameObject newLines = Instantiate(linesPrefab);
             activeLine = newLines.GetComponent<Line>(); //Continuous line
+            drawSlot = drawSlot - 1;
 
         }
 
@@ -54,6 +63,8 @@ public class DrawingManager : MonoBehaviour
             //Mouse position to the game world
             Vector2 mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             activeLine.CreatingLine(mousePos);
+
+            
         }
     }
 }

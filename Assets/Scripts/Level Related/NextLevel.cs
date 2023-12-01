@@ -15,6 +15,10 @@ public class NextLevel : MonoBehaviour
             SceneManager.LoadScene("TitleScreen");
         }
 
+        if (collision.tag == "OutOfBounds")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
     }
 
