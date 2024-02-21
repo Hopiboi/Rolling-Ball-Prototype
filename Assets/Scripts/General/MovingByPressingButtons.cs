@@ -7,7 +7,7 @@ public class MovingByPressingButtons : MonoBehaviour
     [Header ("Opening Hatch System")]
     [SerializeField] private GameObject openingHatch;
     [SerializeField] private float speedObject = 4f; //Speed to open the hatch
-    [SerializeField] private Vector2 hatchPosition = new Vector2 (2f, 0f); //Position of the hatch when its open
+    [SerializeField] private Vector2 hatchPosition = new Vector2 (-9.528f, 4.9f); //Position of the hatch when its open
     private GameManager gameManager;
 
     private void Start()
