@@ -13,7 +13,7 @@ public class DrawingManager : MonoBehaviour
 
     [Header("Drawing Count")]
     [SerializeField] private int drawSlot = 3;
-    [SerializeField] private int zeroSlot = -1;
+    [SerializeField] private int zeroSlot = 0;
 
     [Header("Third Party")]
     private Camera cam;
@@ -47,7 +47,7 @@ public class DrawingManager : MonoBehaviour
             //The line will be created
             GameObject newLines = Instantiate(linesPrefab);
             activeLine = newLines.GetComponent<Line>(); //Continuous line
-            drawSlot = drawSlot - 1;
+            
 
         }
 
@@ -55,6 +55,7 @@ public class DrawingManager : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
         {
             activeLine = null;
+            drawSlot = drawSlot - 1;
         }
 
         //Continue the line
