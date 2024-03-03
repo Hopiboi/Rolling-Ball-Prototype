@@ -22,6 +22,11 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
+
     public void Level1()
     {
         SceneManager.LoadScene("Level 1");

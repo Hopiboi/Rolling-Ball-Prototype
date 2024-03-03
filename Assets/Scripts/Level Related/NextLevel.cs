@@ -12,7 +12,7 @@ public class NextLevel : MonoBehaviour
 
         if(collision.tag == "Entrance")
         {
-            SceneManager.LoadScene("TitleScreen");
+            SceneManager.LoadScene("Congratulation");
         }
 
         if (collision.tag == "OutOfBounds")
